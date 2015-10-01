@@ -1,13 +1,17 @@
 <head>
   <meta charset="utf-8">
-  <title>Joe and Gavin</title>
+  <title>Joe and Harry</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSsh7DRy4BsQ1OWx6ZhJWfOkpnlXV04IM&callback=initMap"
+            async defer></script>
   <script src="src/Thermostat.js"></script>
   <script src="src/App.js"></script>
+
 </head>
 
 <body>
   <div style='display: block'>
-    <h1>Thermostat</h1>
+    <h1>Home Thermostat</h1>
   </div>
   <div style='float: left'>
     <h1><span id='temperature' style='color: blue'>20</span> <sup>o</sup> C</h1>
@@ -29,5 +33,38 @@
       <button id="Reset">Reset</button>
     </div>
  </div>
+
+ <div style='clear:left;display: block'>
+   <h1>Location: <span id='location' ></span></h1>
+   <h1><span id='locationTemp' ></span> <sup>o</sup> C</h1>
+ </div>
+
+ <form action='/'>
+   <input type='text' name='city'>
+   <input type='submit' value='Find Location'>
+ </form>
+ <div id="map" style='display:block;height:50%;width:50%'></div>
+ <script>
+ function initMap(){};
+ // function initMap() {
+ //   var map1 = new google.maps.Map(document.getElementById('map'), {
+ //     center: {lat: -34.397, lng: 150.644},
+ //     zoom: 7
+ //   });
+ //   var infoWindow = new google.maps.InfoWindow({map: map1});
+ //
+ //    navigator.geolocation.getCurrentPosition(function(position) {
+ //      var pos = {
+ //        lat: position.coords.latitude,
+ //        lng: position.coords.longitude
+ //      };
+ //
+ //      infoWindow.setPosition(pos);
+ //      infoWindow.setContent('Found');
+ //      map1.setCenter(pos);
+ //    });
+ // };
+ </script>
+
 
 </body>
