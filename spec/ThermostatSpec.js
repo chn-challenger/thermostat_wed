@@ -96,7 +96,7 @@ describe("Thermostat",function() {
     });
 
     it("is yellow when between 18 and 25 degrees",function() {
-      expect(thermostat.colour()).toEqual("yellow");
+      expect(thermostat.colour()).toEqual("blue");
     });
 
   });
