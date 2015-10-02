@@ -29,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var urlCity = window.location.search.replace('?city=', '');
 
-  console.log(urlCity);
-
   $.ajax({
    url : "http://api.wunderground.com/api/549637f16227567b/geolookup/conditions/forecast/q/autoip.json",
    dataType : "jsonp",
@@ -52,12 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $.ajax('http://api.openweathermap.org/data/2.5/weather?q={' + urlCity + '}', {
     success: function(data) {
-
-
-      if (urlCity)
-      {
-
-
+      if (urlCity)  {
         var weathertemp = (data.main.temp - 273.15).toFixed(1);
         var weathername = data.name;
         var lati = data.coord.lat;
@@ -77,10 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
           $('#locationTemp').html(weathertemp);
           $('#location').html(weathername);
 
-
-      }
-      else
-      {
+      } else {
           var map1 = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
             zoom: 19
@@ -97,44 +87,10 @@ document.addEventListener('DOMContentLoaded', function() {
              infoWindow.setContent('Found');
              map1.setCenter(pos);
            });
-
       };
-
-
-      // var weathertemp = (data.main.temp - 273.15).toFixed(1);
-      // var weathername = data.name;
-      // var lati = data.coord.lat;
-      // var long = data.coord.lon;
-      // var pos = {lat: lati, lng: long};
-      //
-      // var map1 = new google.maps.Map(document.getElementById('map'), {
-      //   center: {lat: lati, lng: long},
-      //   zoom: 17
-      // });
-      //
-      //   var infoWindow = new google.maps.InfoWindow({map: map1});
-      //   infoWindow.setPosition({lat: lati, lng: long});
-      //   infoWindow.setContent('Found');
-      //   map1.setCenter(pos);
-      //
-      //   $('#locationTemp').html(weathertemp);
-      //   $('#location').html(weathername);
-
-
-
-
     }
   });
 
-  // console.log(pos);
 
-  // $.ajax('https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyA6H-yp5yYrieFg7osZBAoJLRvQGNe0xhs', {
-  //   success: function(data2) {
-  //     console.log(data2);
-  //   }
-  // });
-
-
-
-
+  
 });
