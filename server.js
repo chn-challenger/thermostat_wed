@@ -11,14 +11,14 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(root + '/index.html'));
 });
 
-
-app.get('/example', function(req, res) {
-  res.sendFile(path.join(root + '/example.html'));
-});
-
-app.get('/geo', function(req, res) {
-  res.sendFile(path.join(root + '/geolocation.html'));
-});
+//
+// app.get('/example', function(req, res) {
+//   res.sendFile(path.join(root + '/example.html'));
+// });
+//
+// app.get('/geo', function(req, res) {
+//   res.sendFile(path.join(root + '/geolocation.html'));
+// });
 
 var server = app.listen(9292, function() {
   var host = server.address().address;
